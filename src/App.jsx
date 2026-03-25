@@ -1,5 +1,6 @@
 import Counter from './count'
 import './App.css'
+import BetsMan from './Betsman'
 
 function App() {
   function handleClick() {
@@ -20,7 +21,8 @@ function App() {
     <>
    
       <h1>Get started</h1>
-
+      <BetsMan></BetsMan>
+      <br />
       <Counter></Counter>
 
 
