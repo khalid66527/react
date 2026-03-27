@@ -4,9 +4,12 @@ import BetsMan from './Betsman'
 import Users from './users'
 import { Suspense } from 'react'
 import Friends from './friends'
+import Post from './posts'
 
-const fachUsers = fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
+
+// const fachUsers = fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(res => res.json())
+
 
 
 const fetchFriends = async() =>{ 
@@ -14,8 +17,18 @@ const fetchFriends = async() =>{
     return res.json()
   }
 
+
+// const fachPosts = async() =>{ 
+//    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+//     return res.json()
+//   }
+
+
+
 function App() {
   const friendPromise = fetchFriends()
+  // const postsPromise = fachPosts()
+
 
   function handleClick() {
     alert('I am a Clicked')
@@ -36,9 +49,15 @@ function App() {
    
       <h1>Get started</h1>
 
-      <Suspense fallback={<h2>Loding...</h2>}>
+
+{/* 
+      <Suspense fallback = {<h3> Post Loding....</h3>}>
+        <Post postsPromise = {postsPromise}></Post>
+      </Suspense> */}
+
+      {/* <Suspense fallback={<h2>Loding...</h2>}>
         <Users fachUsers ={fachUsers} ></Users>
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback = {<h3>Friend Messege Loding...</h3>}>
         <Friends friendPromise= {friendPromise} >  </Friends>
